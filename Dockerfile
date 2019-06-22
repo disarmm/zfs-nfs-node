@@ -7,5 +7,5 @@ RUN apt-get update && apt-get install -y nfs-kernel-server && rm -rf /var/lib/ap
 ADD . /tmp
 
 # edit exports
-RUN bash -c "/tmp/addExport.sh" && exportfs -a
+RUN bash -c "/tmp/config.sh" && exportfs -a
 RUN service nfs-kernel-server start
